@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
-const Login = () => React.createElement('p', null, 'Login');
+import { Login } from 'amannn-caritas-online-beratung-frontend';
 
 ReactDOM.render(
 	React.createElement(Login),

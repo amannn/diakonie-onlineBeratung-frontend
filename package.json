@@ -9,7 +9,7 @@
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.5.0",
 		"@typescript-eslint/parser": "^4.5.0",
-		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.3",
+		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.9",
 		"babel-eslint": "^10.1.0",
 		"core-js": "^3.7.0",
 		"element-closest": "^3.0.2",
@@ -85,11 +85,6 @@
 			"last 1 chrome version",
 			"last 1 firefox version",
 			"last 1 safari version"
-		]
-	},
-	"babel": {
-		"presets": [
-			"react-app"
 		]
 	},
 	"config": {
