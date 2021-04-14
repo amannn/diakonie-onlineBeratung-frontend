@@ -9,7 +9,7 @@
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.5.0",
 		"@typescript-eslint/parser": "^4.5.0",
-		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.9",
+		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.12",
 		"babel-eslint": "^10.1.0",
 		"core-js": "^3.7.0",
 		"element-closest": "^3.0.2",
@@ -48,7 +48,7 @@
 		"wait-on": "^5.2.0"
 	},
 	"scripts": {
-		"start": "HOST=caritas.local node node_modules/amannn-caritas-online-beratung-frontend/scripts/start.js",
+		"start": "HOST=diakonie.local node node_modules/amannn-caritas-online-beratung-frontend/scripts/start.js",
 		"build": "node node_modules/amannn-caritas-online-beratung-frontend/scripts/build.js",
 		"test": "concurrently --kill-others --success first \"cross-env BROWSER=none npm start\" \"wait-on http://caritas.local:9000 && cross-env NODE_ENV=development cypress run\"",
 		"release": "standard-version",
