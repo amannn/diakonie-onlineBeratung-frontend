@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"lib": ["es6", "dom"],
+		"types": ["cypress"],
+		"moduleResolution": "node"
+	},
+	"include": [
+		"**/*.ts",
+		"node_modules/amannn-caritas-online-beratung-frontend/src/**/*.d.ts"
+	]
+}

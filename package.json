@@ -6,10 +6,23 @@
 		"type": "git",
 		"url": "https://github.com/amannn/diakonie-onlineBeratung-frontend.git"
 	},
+	"scripts": {
+		"start": "HOST=diakonie.local node node_modules/amannn-caritas-online-beratung-frontend/scripts/start.js",
+		"build": "node node_modules/amannn-caritas-online-beratung-frontend/scripts/build.js",
+		"test": "concurrently --kill-others --success first \"cross-env BROWSER=none npm start\" \"wait-on http://diakonie.local:9000 && cross-env NODE_ENV=development cypress run\"",
+		"release": "standard-version",
+		"serve": "serve build",
+		"dev": "run-s dev:cy",
+		"dev:cy": "run-p dev:cy:*",
+		"dev:cy:start-cra": "BROWSER=none npm start",
+		"dev:cy:wait-and-open": "run-s dev:cy:wait-and-open:*",
+		"dev:cy:wait-and-open:wait-on-cra": "wait-on http://diakonie.local:9000",
+		"dev:cy:wait-and-open:open": "cross-env NODE_ENV=development cypress open"
+	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.5.0",
 		"@typescript-eslint/parser": "^4.5.0",
-		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.12",
+		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.14",
 		"babel-eslint": "^10.1.0",
 		"core-js": "^3.7.0",
 		"element-closest": "^3.0.2",
@@ -35,30 +48,19 @@
 		"@commitlint/cli": "11.0.0",
 		"@commitlint/config-conventional": "11.0.0",
 		"breakpoint-sass": "2.7.1",
+		"concurrently": "^6.0.2",
 		"cross-env": "^7.0.2",
 		"cypress": "^6.2.0",
 		"cypress-file-upload": "^4.1.1",
 		"cz-conventional-changelog": "3.3.0",
 		"husky": "4.3.0",
 		"lint-staged": "^10.5.1",
+		"mock-socket": "^9.0.3",
 		"npm-run-all": "^4.1.5",
 		"prettier": "2.1.2",
 		"serve": "^11.3.2",
 		"standard-version": "9.0.0",
 		"wait-on": "^5.2.0"
-	},
-	"scripts": {
-		"start": "HOST=diakonie.local node node_modules/amannn-caritas-online-beratung-frontend/scripts/start.js",
-		"build": "node node_modules/amannn-caritas-online-beratung-frontend/scripts/build.js",
-		"test": "concurrently --kill-others --success first \"cross-env BROWSER=none npm start\" \"wait-on http://caritas.local:9000 && cross-env NODE_ENV=development cypress run\"",
-		"release": "standard-version",
-		"serve": "serve build",
-		"dev": "run-s dev:cy",
-		"dev:cy": "run-p dev:cy:*",
-		"dev:cy:start-cra": "BROWSER=none npm start",
-		"dev:cy:wait-and-open": "run-s dev:cy:wait-and-open:*",
-		"dev:cy:wait-and-open:wait-on-cra": "wait-on http://caritas.local:9000",
-		"dev:cy:wait-and-open:open": "cross-env NODE_ENV=development cypress open"
 	},
 	"eslintConfig": {
 		"extends": [

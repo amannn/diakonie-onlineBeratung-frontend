@@ -39,6 +39,6 @@ jobs:
                   tags: true
             - name: test and build
               run: |
-                  echo "127.0.0.1 caritas.local" | sudo tee -a /etc/hosts
+                  echo "127.0.0.1 diakonie.local" | sudo tee -a /etc/hosts
                   npm run test
                   npm run build
