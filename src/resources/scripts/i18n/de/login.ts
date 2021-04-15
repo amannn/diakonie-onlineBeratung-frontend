@@ -1,5 +1,5 @@
 const login = {
-	'headline': 'Login',
+	'headline': 'Diakonie Login',
 	'user.label': 'Benutzername/E-Mail',
 	'password.label': 'Passwort',
 	'warning.failed':
