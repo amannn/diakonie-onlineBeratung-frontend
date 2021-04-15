@@ -6,23 +6,28 @@
 @import '~breakpoint-sass/stylesheets/breakpoint';
 
 // FONTS
-$font-family-sans-serif: 'Roboto-Regular', sans-serif;
-$font-family-regular: 'Roboto-Regular', sans-serif;
-$font-family-light: 'Roboto-Light', sans-serif;
-$font-family-medium: 'Roboto-Medium', sans-serif;
-$font-family-bold: 'Roboto-Bold', sans-serif;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-regular: 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-light: 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-medium: 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-bold: 'Helvetica Neue', Helvetica, sans-serif;
 
-$font-familiy-regular-italic: 'Roboto-Regular-Italic', sans-serif;
+$font-familiy-regular-italic: 'Helvetica Neue', Helvetica, sans-serif;
 
-$font-family-slab-regular: 'RobotoSlab-Regular', serif;
-$font-family-slab-thin: 'RobotoSlab-Thin', serif;
-$font-family-slab-light: 'RobotoSlab-Light', serif;
-$font-family-slab-bold: 'RobotoSlab-Bold', serif;
+$font-family-slab-regular: 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-slab-thin: 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-slab-light: 'Helvetica Neue', Helvetica, sans-serif;
+$font-family-slab-bold: 'Helvetica Neue', Helvetica, sans-serif;
 
 $font-weight-regular: 400;
 $font-weight-light: 300;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
+
+// Optionally include web-fonts
+// @mixin setup-fonts {
+//   @font-face { ... }
+// }
 
 // Z-INDEXES
 //$z-index-component-xyz: 1;
