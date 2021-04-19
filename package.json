@@ -7,8 +7,8 @@
 		"url": "https://github.com/amannn/diakonie-onlineBeratung-frontend.git"
 	},
 	"scripts": {
-		"start": "HOST=diakonie.local node node_modules/amannn-caritas-online-beratung-frontend/scripts/start.js",
-		"build": "node node_modules/amannn-caritas-online-beratung-frontend/scripts/build.js",
+		"start": "HOST=diakonie.local amannn-caritas-online-beratung-frontend start",
+		"build": "amannn-caritas-online-beratung-frontend build",
 		"test": "concurrently --kill-others --success first \"cross-env BROWSER=none npm start\" \"wait-on http://diakonie.local:9000 && cross-env NODE_ENV=development cypress run\"",
 		"release": "standard-version",
 		"serve": "serve build",
@@ -22,7 +22,7 @@
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.5.0",
 		"@typescript-eslint/parser": "^4.5.0",
-		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.18",
+		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.20",
 		"babel-eslint": "^10.1.0",
 		"core-js": "^3.7.0",
 		"element-closest": "^3.0.2",
