@@ -23,7 +23,7 @@
 			"roles": ["user"],
 			"customFields": {},
 			"statusConnection": "offline",
-			"avatarUrl": "http://caritas/avatarUrl",
+			"avatarUrl": "http://diakonie/avatarUrl",
 			"settings": {
 				"preferences": {
 					"enableAutoAway": true,
