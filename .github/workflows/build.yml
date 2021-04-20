@@ -42,3 +42,8 @@ jobs:
                   echo "127.0.0.1 diakonie.local" | sudo tee -a /etc/hosts
                   npm run test
                   npm run build
+            - uses: actions/upload-artifact@v2
+              if: failure()
+              with:
+                name: cypress-videos
+                path: cypress
