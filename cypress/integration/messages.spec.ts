@@ -1,7 +1,7 @@
 import { emitStompDirectMessage } from '../support/websocket';
 import { generateAskerSession, generateMessage } from '../support/sessions';
-import attachmentsI18n from '../../src/resources/i18n/de/attachments';
-import attachmentsInformalI18n from '../../src/resources/i18n/de/attachmentsInformal';
+import attachmentsI18n from '../../src/resources/scripts/i18n/de/attachments';
+import attachmentsInformalI18n from '../../src/resources/scripts/i18n/de/attachmentsInformal';
 
 describe('Messages', () => {
 	describe('Attachments', () => {
