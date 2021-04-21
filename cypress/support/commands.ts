@@ -9,7 +9,7 @@ import { CyHttpMessages, RouteHandler } from 'cypress/types/net-stubbing';
 import { mockWebSocket } from './websocket';
 import { UserDataInterface } from 'amannn-caritas-online-beratung-frontend';
 
-interface CaritasMockedLoginArgs {
+interface MockedLoginArgs {
 	type?: 'asker' | 'consultant';
 	auth?: {
 		expires_in?: number;
@@ -29,12 +29,12 @@ interface CaritasMockedLoginArgs {
 declare global {
 	namespace Cypress {
 		interface Chainable {
-			mockedLogin(args?: CaritasMockedLoginArgs): Chainable<Element>;
+			mockedLogin(args?: MockedLoginArgs): Chainable<Element>;
 		}
 	}
 }
 
-Cypress.Commands.add('mockedLogin', (args: CaritasMockedLoginArgs = {}) => {
+Cypress.Commands.add('mockedLogin', (args: MockedLoginArgs = {}) => {
 	mockWebSocket();
 
 	cy.fixture('auth.token').then((auth) =>
