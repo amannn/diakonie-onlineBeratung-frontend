@@ -1,6 +1,6 @@
 describe('Login', () => {
 	it.only('should be able to login', () => {
-		cy.caritasMockedLogin();
+		cy.mockedLogin();
 
 		cy.get('#appRoot').should('exist');
 	});

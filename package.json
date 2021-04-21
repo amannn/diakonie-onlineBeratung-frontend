@@ -1,6 +1,6 @@
 {
 	"name": "diakonie-online-beratung-frontend",
-	"title": "Caritas Online-Beratung",
+	"title": "Diakonie Online-Beratung",
 	"version": "0.0.0",
 	"repository": {
 		"type": "git",
@@ -22,7 +22,7 @@
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.5.0",
 		"@typescript-eslint/parser": "^4.5.0",
-		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.26",
+		"amannn-caritas-online-beratung-frontend": "0.0.0-alpha.27",
 		"babel-eslint": "^10.1.0",
 		"core-js": "^3.7.0",
 		"element-closest": "^3.0.2",

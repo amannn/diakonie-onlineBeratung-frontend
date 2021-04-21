@@ -16,7 +16,7 @@ describe('Keycloak Tokens', () => {
 	});
 
 	it('should get and store tokens and expiry time on login', () => {
-		cy.caritasMockedLogin();
+		cy.mockedLogin();
 
 		cy.get('#appRoot').then(() => {
 			cy.getCookie('keycloak').should('exist');
@@ -31,7 +31,7 @@ describe('Keycloak Tokens', () => {
 
 	it('should keep refreshing access token before it expires', () => {
 		cy.clock();
-		cy.caritasMockedLogin();
+		cy.mockedLogin();
 
 		for (let check = 0; check < 3; check++) {
 			waitForTokenProcessing();
@@ -49,7 +49,7 @@ describe('Keycloak Tokens', () => {
 
 	it('should refresh the access token if its expired when loading the app', () => {
 		cy.clock();
-		cy.caritasMockedLogin();
+		cy.mockedLogin();
 
 		cy.clock().then((clock) => {
 			clock.restore();
@@ -70,7 +70,7 @@ describe('Keycloak Tokens', () => {
 
 	it.skip('should logout if refresh token is already expired when loading the app', () => {
 		cy.clock();
-		cy.caritasMockedLogin();
+		cy.mockedLogin();
 
 		cy.clock().then((clock) => {
 			clock.restore();
@@ -86,7 +86,7 @@ describe('Keycloak Tokens', () => {
 
 	it('should logout if refresh token is expired while the app is loaded', () => {
 		cy.clock();
-		cy.caritasMockedLogin();
+		cy.mockedLogin();
 		waitForTokenProcessing();
 
 		cy.tick(authTokenJson.refresh_expires_in * 1000 + 1);
@@ -98,7 +98,7 @@ describe('Keycloak Tokens', () => {
 
 	it('should not logout if refresh token is expired but access token is still valid', () => {
 		cy.clock();
-		cy.caritasMockedLogin({
+		cy.mockedLogin({
 			auth: { expires_in: 1800, refresh_expires_in: 600 }
 		});
 
@@ -114,7 +114,7 @@ describe('Keycloak Tokens', () => {
 		const refreshExpiresIn = 600;
 
 		cy.clock();
-		cy.caritasMockedLogin({
+		cy.mockedLogin({
 			auth: { expires_in: 1800, refresh_expires_in: refreshExpiresIn }
 		});
 

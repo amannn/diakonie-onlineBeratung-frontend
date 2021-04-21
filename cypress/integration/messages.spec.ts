@@ -6,7 +6,7 @@ import attachmentsInformalI18n from '../../src/resources/scripts/i18n/de/attachm
 describe('Messages', () => {
 	describe('Attachments', () => {
 		it('should allow to send a message with attachment', () => {
-			cy.caritasMockedLogin();
+			cy.mockedLogin();
 
 			cy.get('[data-cy=sessions-list-items-wrapper]').click();
 			cy.get('.textarea__attachmentInput').attachFile('empty.pdf');
@@ -17,7 +17,7 @@ describe('Messages', () => {
 
 		describe('formal', () => {
 			it('should show inline error when quota is reached', () => {
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					attachmentUpload: {
 						statusCode: 403,
 						headers: {
@@ -38,7 +38,7 @@ describe('Messages', () => {
 
 		describe('informal', () => {
 			it('should show inline error when quota is reached', () => {
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					userData: {
 						formalLanguage: false
 					},
@@ -66,7 +66,7 @@ describe('Messages', () => {
 			describe('Initially loading the app', () => {
 				it('should not animate the envelope and no dot visible', () => {
 					cy.clock();
-					cy.caritasMockedLogin();
+					cy.mockedLogin();
 
 					cy.get('.navigation__item__count--active').should(
 						'not.exist'
@@ -81,7 +81,7 @@ describe('Messages', () => {
 				describe('New message from Live Service', () => {
 					it('should animate the envelope and initial dot', () => {
 						const sessions = [generateAskerSession()];
-						cy.caritasMockedLogin({ sessions }).then(() => {
+						cy.mockedLogin({ sessions }).then(() => {
 							sessions[0].session.messagesRead = false;
 							emitStompDirectMessage();
 						});
@@ -99,7 +99,7 @@ describe('Messages', () => {
 			describe('Not on My Sessions', () => {
 				describe('New message from Live Service', () => {
 					it('should animate the enevelope and initial dot', () => {
-						cy.caritasMockedLogin();
+						cy.mockedLogin();
 						cy.get('a[href="/profile"]').click();
 
 						emitStompDirectMessage();
@@ -124,7 +124,7 @@ describe('Messages', () => {
 							})
 						];
 
-						cy.caritasMockedLogin({
+						cy.mockedLogin({
 							// TODO: we need to delay the call to the
 							// sessions endpoint since in case it resolves
 							// too fast the dot is removed too fast or
@@ -172,7 +172,7 @@ describe('Messages', () => {
 							})
 						];
 
-						cy.caritasMockedLogin({
+						cy.mockedLogin({
 							sessions: [session1, session2],
 							messages
 						});
@@ -222,7 +222,7 @@ describe('Messages', () => {
 							messagesRead: false
 						})
 					];
-					cy.caritasMockedLogin({ sessions });
+					cy.mockedLogin({ sessions });
 
 					cy.get('.navigation__item__count--active').should('exist');
 					cy.get('.navigation__item__count--initial').should('exist');
@@ -237,7 +237,7 @@ describe('Messages', () => {
 								messagesRead: false
 							})
 						];
-						cy.caritasMockedLogin({ sessions });
+						cy.mockedLogin({ sessions });
 
 						emitStompDirectMessage();
 
@@ -259,7 +259,7 @@ describe('Messages', () => {
 								messagesRead: false
 							})
 						];
-						cy.caritasMockedLogin({ sessions });
+						cy.mockedLogin({ sessions });
 						cy.get('.sessionsListItem');
 
 						emitStompDirectMessage();
@@ -291,7 +291,7 @@ describe('Messages', () => {
 							})
 						];
 
-						cy.caritasMockedLogin({
+						cy.mockedLogin({
 							sessions: [session1, session2],
 							messages
 						});
@@ -349,7 +349,7 @@ describe('Messages', () => {
 							})
 						];
 
-						cy.caritasMockedLogin({
+						cy.mockedLogin({
 							sessions: [session1, session2],
 							messages
 						});

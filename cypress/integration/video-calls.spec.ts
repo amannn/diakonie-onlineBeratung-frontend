@@ -10,7 +10,7 @@ describe('Video calls', () => {
 			//TODO: reimplement on videocall release
 			it.skip('should show video call buttons in session header', () => {
 				const sessions = generateMultipleConsultantSessions(2);
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'consultant',
 					sessions
 				});
@@ -28,7 +28,7 @@ describe('Video calls', () => {
 	describe('Asker', () => {
 		it('should not show buttons to start a new video call in session header', () => {
 			const sessions = generateMultipleAskerSessions(2);
-			cy.caritasMockedLogin({
+			cy.mockedLogin({
 				type: 'asker',
 				sessions
 			});
@@ -43,14 +43,14 @@ describe('Video calls', () => {
 
 		describe('Incoming video call notifications', () => {
 			it('should show no notifications when no notifications exist', () => {
-				cy.caritasMockedLogin();
+				cy.mockedLogin();
 
 				cy.get('[data-cy=notifications]').should('be.empty');
 			});
 
 			it('should show an incoming video call', () => {
 				const sessions = generateMultipleConsultantSessions(2);
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'asker',
 					sessions
 				}).then(() => {
@@ -68,7 +68,7 @@ describe('Video calls', () => {
 			it('should show all incoming video calls', () => {
 				const amountOfIncomingCalls = 3;
 				const sessions = generateMultipleConsultantSessions(2);
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'asker',
 					sessions
 				}).then(() => {
@@ -92,7 +92,7 @@ describe('Video calls', () => {
 
 			it('should remove incoming call when call is answered', () => {
 				const sessions = generateMultipleConsultantSessions(2);
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'asker',
 					sessions
 				}).then(() => {
@@ -113,7 +113,7 @@ describe('Video calls', () => {
 
 			it('should remove incoming call when call is rejected', () => {
 				const sessions = generateMultipleConsultantSessions(2);
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'asker',
 					sessions
 				}).then(() => {
@@ -134,7 +134,7 @@ describe('Video calls', () => {
 			describe('Playing of ringtone', () => {
 				it('should play on any incoming video call', () => {
 					const sessions = generateMultipleConsultantSessions(2);
-					cy.caritasMockedLogin({
+					cy.mockedLogin({
 						type: 'asker',
 						sessions
 					}).then(() => {
@@ -152,7 +152,7 @@ describe('Video calls', () => {
 
 				it('should stop playing if last incoming call gets rejected', () => {
 					const sessions = generateMultipleConsultantSessions(2);
-					cy.caritasMockedLogin({
+					cy.mockedLogin({
 						type: 'asker',
 						sessions
 					}).then(() => {
@@ -170,7 +170,7 @@ describe('Video calls', () => {
 
 				it('should stop playing if last incoming call gets answered', () => {
 					const sessions = generateMultipleConsultantSessions(2);
-					cy.caritasMockedLogin({
+					cy.mockedLogin({
 						type: 'asker',
 						sessions
 					}).then(() => {
@@ -188,7 +188,7 @@ describe('Video calls', () => {
 
 				it('should keep playing if at least one incoming call remains after rejecting a call', () => {
 					const sessions = generateMultipleConsultantSessions(2);
-					cy.caritasMockedLogin({
+					cy.mockedLogin({
 						type: 'asker',
 						sessions
 					}).then(() => {
@@ -213,7 +213,7 @@ describe('Video calls', () => {
 
 				it('should keep playing if at least one incoming call remains after answering a call', () => {
 					const sessions = generateMultipleConsultantSessions(2);
-					cy.caritasMockedLogin({
+					cy.mockedLogin({
 						type: 'asker',
 						sessions
 					}).then(() => {

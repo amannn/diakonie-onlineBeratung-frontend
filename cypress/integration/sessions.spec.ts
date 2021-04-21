@@ -14,7 +14,7 @@ describe('Sessions', () => {
 			const sessions = generateMultipleConsultantSessions(
 				amountOfSessions
 			);
-			cy.caritasMockedLogin({
+			cy.mockedLogin({
 				type: 'consultant',
 				sessions
 			});
@@ -29,7 +29,7 @@ describe('Sessions', () => {
 				amountOfSessions
 			);
 
-			cy.caritasMockedLogin({
+			cy.mockedLogin({
 				type: 'consultant',
 				sessions
 			});
@@ -63,7 +63,7 @@ describe('Sessions', () => {
 				amountOfSessions
 			);
 
-			cy.caritasMockedLogin({
+			cy.mockedLogin({
 				type: 'consultant',
 				sessions
 			});
@@ -98,7 +98,7 @@ describe('Sessions', () => {
 					amountOfSessions
 				);
 
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'consultant',
 					sessions,
 					sessionsCallback: (req) => {
@@ -124,7 +124,7 @@ describe('Sessions', () => {
 		it('should list my sessions', () => {
 			const amountOfSessions = 3;
 			const sessions = generateMultipleAskerSessions(amountOfSessions);
-			cy.caritasMockedLogin({
+			cy.mockedLogin({
 				type: 'asker',
 				sessions
 			});
@@ -133,7 +133,7 @@ describe('Sessions', () => {
 		});
 
 		it('should show a header with headline', () => {
-			cy.caritasMockedLogin({
+			cy.mockedLogin({
 				type: 'asker'
 			});
 			cy.get('[data-cy=session-list-header]').should('exist');
@@ -148,7 +148,7 @@ describe('Sessions', () => {
 				const sessions = generateMultipleAskerSessions(
 					amountOfSessions
 				);
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'asker',
 					sessions
 				});
@@ -163,7 +163,7 @@ describe('Sessions', () => {
 				const sessions = generateMultipleAskerSessions(
 					amountOfSessions
 				);
-				cy.caritasMockedLogin({
+				cy.mockedLogin({
 					type: 'asker',
 					sessions
 				});
