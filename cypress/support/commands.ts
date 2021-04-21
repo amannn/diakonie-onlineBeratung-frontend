@@ -45,7 +45,7 @@ Cypress.Commands.add(
 			cy
 				.intercept(
 					'POST',
-					'/auth/realms/caritas-online-beratung/protocol/openid-connect/token',
+					'/auth/realms/diakonie-online-beratung/protocol/openid-connect/token',
 					{
 						...auth,
 						...args.auth
@@ -56,7 +56,7 @@ Cypress.Commands.add(
 
 		cy.intercept(
 			'POST',
-			'/auth/realms/caritas-online-beratung/protocol/openid-connect/logout',
+			'/auth/realms/diakonie-online-beratung/protocol/openid-connect/logout',
 			{}
 		).as('authLogout');
 
